@@ -1,18 +1,14 @@
 let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 let tabMots = ["vendre", "russie", "stylo", "langue", "batteries", "Cosmique"];
-let essais = 5;
 let lettres_restantes = 'abcdefghijklmnopqrstuvwxyz';
-
 let mot_a_deviner;
 let affichage;
 let lettre_jouee;
 let jeu_en_cours = true;
 let victoire = false;
-let nb_essais_restants = essais;
+let nb_essais = 0;
 
 lettres_restantes = alphabet;
-
-
 
 function choix_de_mot() {
     let nombre = Math.round(Math.random() * (tabMots.length - 1));
@@ -83,7 +79,7 @@ function continuer_jeu() {
     let result;
     if (victoire) {
         result = false;
-    } else if (nb_essais_restants == 0) {
+    } else if (nb_essais == 5) {
         result = false;
     } else {
         result = true;
@@ -100,8 +96,8 @@ while (jeu_en_cours) {
     lettres_restantes = actualise_lettre(lettre_jouee);
 
     if (contient(lettre_jouee, mot_a_deviner) == false) {
-        nb_essais_restants--;
-        alert("Il ne vous reste que " + nb_essais_restants + " essais")
+        nb_essais++;
+        alert("Il ne vous reste que " + (5 - nb_essais) + " essais")
     }
     affichage = mot_a_afficher(mot_a_deviner, lettres_restantes);
 
