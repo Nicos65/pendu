@@ -1,7 +1,21 @@
-html,
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    background-color: gray;
+    margin-top: 20%;
+}
+
+div {
+    text-align: center;
+}
+.dive{
+    
+}
+
+.win {
+    background-color: green;
+}
+
+.lose {
+    background-color: red;
 }
